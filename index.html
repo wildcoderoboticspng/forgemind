@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ForgeMind | Closed Alpha Waitlist</title>
+  <meta name="description" content="High-performance systems for high-performance individuals. Join the ForgeMind closed alpha waitlist.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #050505;
+      --primary: #0055ff;
+      --accent: #00ffcc;
+      --text-main: #ffffff;
+      --text-muted: #94a3b8;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 30px 30px;
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Engineering Scanline Effect */
+    .scanline-system {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .scanline-system::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(0, 85, 255, 0.3), transparent);
+      box-shadow: 0 0 10px rgba(0, 85, 255, 0.4);
+      animation: scanLineMove 8s linear infinite;
+    }
+
+    @keyframes scanLineMove {
+      0% { top: -2px; }
+      100% { top: 100%; }
+    }
+
+    /* Core Container */
+    .fm-waitlist-section {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .fm-container {
+      max-width: 650px;
+      width: 100%;
+      background: rgba(10, 15, 30, 0.6);
+      border: 1px solid rgba(0, 85, 255, 0.2);
+      padding: 60px 40px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+    }
+
+    /* Branding */
+    .fm-logo {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      color: var(--text-main);
+    }
+
+    .fm-logo span {
+      color: var(--accent);
+    }
+
+    /* Typography */
+    .fm-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 25px;
+      line-height: 1.2;
+      color: var(--text-main);
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .fm-body {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .fm-micro-text {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 40px;
+      opacity: 0.8;
+    }
+
+    /* Waitlist Form */
+    .fm-alpha-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .fm-input {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      border-radius: 8px;
+      outline: none;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .fm-input::placeholder {
+      color: #475569;
+      text-transform: uppercase;
+      font-family: var(--font-display);
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+
+    .fm-input:focus {
+      border-color: var(--primary);
+      background: rgba(0, 85, 255, 0.05);
+      box-shadow: 0 0 15px rgba(0, 85, 255, 0.2);
+    }
+
+    .fm-submit-btn {
+      background: var(--primary);
+      color: #ffffff;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 20px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .fm-submit-btn:hover {
+      background: var(--accent);
+      color: var(--bg-dark);
+      box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 480px) {
+      .fm-container {
+        padding: 40px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scanline-system"></div>
+
+  <main class="fm-waitlist-section">
+    <div class="fm-container">
+      
+      <div class="fm-logo">Forge<span>Mind</span></div>
+
+      <h1 class="fm-heading">ACCESS DENIED.<br>PREPARE FOR ENTRY.</h1>
+      
+      <p class="fm-body">
+        ForgeMind is not for the masses. We are building the elite system for those who reject mediocrity and demand total mastery over their discipline and income potential. This is a closed-circle environment.
+      </p>
+
+      <p class="fm-micro-text">// High-performance systems. Currently in private testing. //</p>
+      
+      <form class="fm-alpha-form" action="#" method="POST">
+        <input type="email" name="email" placeholder="Enter Your Primary Email" required class="fm-input">
+        <button type="submit" class="fm-submit-btn">JOIN THE CLOSED ALPHA WAITLIST</button>
+      </form>
+
+    </div>
+  </main>
+
+</body>
+</html>

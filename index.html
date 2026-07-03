@@ -6,6 +6,7 @@
   <title>ForgeMind | Closed Alpha Waitlist</title>
   <meta name="description" content="High-performance systems for high-performance individuals. Join the ForgeMind closed alpha waitlist.">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -37,7 +38,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+      overflow-x: hidden;
       position: relative;
     }
 
@@ -74,7 +75,7 @@
       position: relative;
       z-index: 2;
       width: 100%;
-      padding: 20px;
+      padding: 40px 20px;
       display: flex;
       justify-content: center;
     }
@@ -157,12 +158,23 @@
       text-align: center;
     }
 
+    .fm-textarea {
+      resize: vertical;
+      min-height: 120px;
+      text-align: left; /* Better UX for longer messages */
+    }
+
     .fm-input::placeholder {
       color: #475569;
       text-transform: uppercase;
       font-family: var(--font-display);
       letter-spacing: 1px;
       font-size: 0.9rem;
+      text-align: center;
+    }
+    
+    .fm-textarea::placeholder {
+      text-align: left;
     }
 
     .fm-input:focus {
@@ -184,6 +196,7 @@
       border-radius: 8px;
       cursor: pointer;
       transition: all 0.3s ease;
+      margin-top: 10px;
     }
 
     .fm-submit-btn:hover {
@@ -218,8 +231,14 @@
 
       <p class="fm-micro-text">// High-performance systems. Currently in private testing. //</p>
       
-      <form class="fm-alpha-form" action="#" method="POST">
+      <!-- Web3Forms Integration -->
+      <form class="fm-alpha-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="3235b183-ccdd-4866-a40d-f4160ad7900c">
+        
+        <input type="text" name="name" placeholder="Enter Your Name" required class="fm-input">
         <input type="email" name="email" placeholder="Enter Your Primary Email" required class="fm-input">
+        <textarea name="message" placeholder="State your objective for joining" required class="fm-input fm-textarea"></textarea>
+        
         <button type="submit" class="fm-submit-btn">JOIN THE CLOSED ALPHA WAITLIST</button>
       </form>
 
